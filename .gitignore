@@ -1,0 +1,12 @@
+raw_data/
+raw_book_data/first100
+raw_book_data/last100
+raw_book_data/text
+zelfscan/output_data
+zelfscan/output.tsv
+sentiment/input_data
+sentiment/output_data
+sentiment/combined_sent_data.tsv
+machine/data
+goodreads/ratings.tsv
+goodreads/titles.pkl
