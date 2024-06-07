@@ -58,9 +58,9 @@ sns.histplot(results['Real'], bins=20, kde=True, color='blue',
              label='Real', stat="density")
 sns.histplot(results['Predicted'], bins=20, kde=True, color='red',
              label='Predicted', stat="density")
-plt.title('Distribution of Real and Predicted Average Rating Values')
-plt.xlabel('Rating')
-plt.ylabel('Density')
+plt.title('Real vs Predicted Average Rating Values BayesRidge Regression')
+plt.xlabel('Real Rating')
+plt.ylabel('Predicted Rating')
 plt.legend()
 plt.grid(True)
 plt.savefig('real_vs_predicted_distribution_bayes.png')

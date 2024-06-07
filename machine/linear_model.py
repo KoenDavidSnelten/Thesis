@@ -18,8 +18,8 @@ final_data = pd.merge(merged_data, data_stylistic, on='DBNLti_id', how='inner')
 
 
 # Split the data into features and target variable
-X = merged_data.drop(columns=["DBNLti_id", "Rating", "Title"])
-y = merged_data["Rating"]
+X = final_data.drop(columns=["DBNLti_id", "Rating", "Title"])
+y = final_data["Rating"]
 
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2,
@@ -59,9 +59,9 @@ sns.histplot(results['Real'], bins=20, kde=True, color='blue',
              label='Real', stat="density")
 sns.histplot(results['Predicted'], bins=20, kde=True, color='red',
              label='Predicted', stat="density")
-plt.title('Distribution of Real and Predicted Average Rating Values')
-plt.xlabel('Rating')
-plt.ylabel('Density')
+plt.title('Real vs Predicted Average Rating Values Linear Regression')
+plt.xlabel('Real Rating')
+plt.ylabel('Predicted Rating')
 plt.legend()
 plt.grid(True)
 plt.savefig('real_vs_predicted_distribution_linear.png')
