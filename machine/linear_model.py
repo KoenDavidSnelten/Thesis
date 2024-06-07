@@ -50,6 +50,10 @@ print("R-squared:", r2)
 rmse = mean_squared_error(y_test, y_pred, squared=False)
 print("Root Mean Squared Error:", rmse)
 
+# Get the coefficients of the regression model
+coefficients = model.coef_
+print("Coefficients:", coefficients)
+
 # Create a DataFrame for real and predicted ratings
 results = pd.DataFrame({'Real': y_test, 'Predicted': y_pred})
 
