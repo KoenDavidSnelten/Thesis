@@ -8,5 +8,8 @@ sentiment/input_data
 sentiment/output_data
 sentiment/combined_sent_data.tsv
 machine/data
+machine/real_vs_predicted_distribution_linear.png
+machine/real_vs_predicted_distribution_bayes.png
 goodreads/ratings.tsv
 goodreads/titles.pkl
+goodreads/rating_distribution.png

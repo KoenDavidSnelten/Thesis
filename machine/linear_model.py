@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, r2_score, mean_squared_error
@@ -47,3 +49,20 @@ print("R-squared:", r2)
 # Compute Root Mean Squared Error (RMSE)
 rmse = mean_squared_error(y_test, y_pred, squared=False)
 print("Root Mean Squared Error:", rmse)
+
+# Create a DataFrame for real and predicted ratings
+results = pd.DataFrame({'Real': y_test, 'Predicted': y_pred})
+
+# Plot the distribution of the real and predicted average rating values
+plt.figure(figsize=(10, 6))
+sns.histplot(results['Real'], bins=20, kde=True, color='blue',
+             label='Real', stat="density")
+sns.histplot(results['Predicted'], bins=20, kde=True, color='red',
+             label='Predicted', stat="density")
+plt.title('Distribution of Real and Predicted Average Rating Values')
+plt.xlabel('Rating')
+plt.ylabel('Density')
+plt.legend()
+plt.grid(True)
+plt.savefig('real_vs_predicted_distribution_linear.png')
+plt.show()
